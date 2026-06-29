@@ -27,11 +27,10 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-surface/80 backdrop-blur-xl border-b border-border shadow-[0_1px_3px_rgba(0,0,0,0.2)]"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? "bg-surface/80 backdrop-blur-xl border-b border-border shadow-[0_1px_3px_rgba(0,0,0,0.2)]"
+          : "bg-transparent"
+          }`}
       >
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           {/* Logo */}

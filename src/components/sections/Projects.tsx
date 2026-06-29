@@ -10,35 +10,36 @@ const projects = [
   {
     title: "Agente RAG para Legislação Urbana",
     description:
-      "Sistema de IA conversacional que utiliza Retrieval-Augmented Generation para consultar e interpretar legislações urbanísticas municipais. O agente processa documentos legais, os indexa em um banco vetorial e responde perguntas com base em fontes verificáveis.",
+      "Sistema de IA conversacional que utiliza Retrieval-Augmented Generation para consultar e interpretar legislações urbanísticas municipais. Processa documentos legais, indexa em banco vetorial e responde com base em fontes verificáveis. Em desenvolvimento.",
     tags: ["Python", "LangChain", "ChromaDB", "IA Generativa", "RAG"],
-    href: "https://github.com/bruni/rag-legislacao",
+    href: "#",
     featured: true,
     emoji: "🤖",
+    wip: true,
   },
   {
-    title: "Sistema de Gestão Acadêmica",
+    title: "Portaria UFN",
     description:
-      "Aplicação web full-stack para gerenciamento de registros acadêmicos, incluindo matrículas, notas e frequência. Interface responsiva com autenticação e controle de acesso baseado em papéis.",
-    tags: ["Django", "PostgreSQL", "JavaScript", "REST API"],
-    href: "https://github.com/bruni/gestao-academica",
-    emoji: "📚",
+      "Sistema de controle de empréstimos e localização de professores para a portaria da Universidade Franciscana. Registro de itens emprestados (chaves, controles, cabos), identificação de professores via crachá RFID e indicação de prédio e sala.",
+    tags: ["Java", "Spring Boot", "React", "MongoDB Atlas"],
+    href: "https://github.com/bruno-difante/PortariaUFN",
+    emoji: "🏫",
   },
   {
-    title: "Dashboard de Monitoramento",
+    title: "Calculadora Django",
     description:
-      "Painel em tempo real para visualização de métricas de sistemas e alertas operacionais. Integração com APIs externas e notificações automáticas.",
-    tags: ["React", "TypeScript", "WebSocket", "Chart.js"],
-    href: "https://github.com/bruni/dashboard-monitoramento",
-    emoji: "📊",
+      "Aplicação web desenvolvida como teste técnico com autenticação de usuários, avaliação de expressões matemáticas, histórico de operações por usuário e interface responsiva com design moderno.",
+    tags: ["Python", "Django", "SQLite", "HTML/CSS/JS"],
+    href: "https://github.com/bruno-difante/calculadora-django",
+    emoji: "🧮",
   },
   {
-    title: "API de Autenticação",
+    title: "Portfólio Pessoal",
     description:
-      "Microserviço de autenticação e autorização com JWT, suporte a OAuth2 e documentação completa com Swagger. Projetado para ser reutilizável em múltiplos projetos.",
-    tags: ["Java", "Spring Boot", "JWT", "Docker"],
-    href: "https://github.com/bruni/auth-api",
-    emoji: "🔐",
+      "Este site! Portfólio pessoal desenvolvido com Next.js e Tailwind CSS, com animações suaves usando Framer Motion, design responsivo e tema dark mode.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    href: "https://github.com/bruno-difante/portfolio",
+    emoji: "🚀",
   },
 ];
 

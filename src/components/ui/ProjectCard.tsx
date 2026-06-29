@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Star, Construction } from "lucide-react";
 import { useState } from "react";
 
 interface ProjectCardProps {
@@ -11,6 +11,7 @@ interface ProjectCardProps {
   href?: string;
   featured?: boolean;
   emoji?: string;
+  wip?: boolean;
 }
 
 export default function ProjectCard({
@@ -20,22 +21,23 @@ export default function ProjectCard({
   href = "#",
   featured = false,
   emoji = "🚀",
+  wip = false,
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
+      {...(!wip && {
+        onClick: () => window.open(href, "_blank", "noopener,noreferrer"),
+      })}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`group relative block overflow-hidden rounded-2xl border transition-all duration-500 ${
         featured
           ? "border-accent/20 bg-gradient-to-br from-accent/[0.03] to-transparent md:col-span-2"
           : "border-border bg-surface"
-      }`}
-      whileHover={{ y: -4 }}
+      } ${wip ? "cursor-default opacity-80" : "cursor-pointer"}`}
+      whileHover={{ y: wip ? 0 : -4 }}
       transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
     >
       {/* Hover glow effect */}
@@ -70,17 +72,24 @@ export default function ProjectCard({
             )}
           </div>
 
-          {/* Arrow icon */}
-          <motion.div
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-alt text-text-muted transition-colors group-hover:border-accent/40 group-hover:bg-accent group-hover:text-white"
-            animate={{
-              x: isHovered ? 2 : 0,
-              y: isHovered ? -2 : 0,
-            }}
-            transition={{ duration: 0.3 }}
-          >
-            <ArrowUpRight className="h-4 w-4" />
-          </motion.div>
+          {/* Arrow icon or WIP badge */}
+          {wip ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-yellow-500/10 px-3 py-1.5 text-[11px] font-semibold text-yellow-400">
+              <Construction className="h-3.5 w-3.5" />
+              Em desenvolvimento
+            </span>
+          ) : (
+            <motion.div
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface-alt text-text-muted transition-colors group-hover:border-accent/40 group-hover:bg-accent group-hover:text-white"
+              animate={{
+                x: isHovered ? 2 : 0,
+                y: isHovered ? -2 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <ArrowUpRight className="h-4 w-4" />
+            </motion.div>
+          )}
         </div>
 
         {/* Title */}
@@ -114,6 +123,6 @@ export default function ProjectCard({
           style={{ transformOrigin: "left" }}
         />
       </div>
-    </motion.a>
+    </motion.div>
   );
 }

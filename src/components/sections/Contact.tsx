@@ -1,7 +1,7 @@
 "use client";
 
 import FadeIn from "@/components/animations/FadeIn";
-import { Github, Linkedin, Mail, ArrowUpRight, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 
 const contactLinks = [
   {
@@ -58,7 +58,7 @@ export default function Contact() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all group-hover:bg-accent group-hover:text-white group-hover:shadow-lg group-hover:shadow-accent/30">
                   <Icon className="h-5 w-5" />
                 </div>
-                <div>
+                <div className="text-center">
                   <p className="text-sm font-bold text-text-primary">{label}</p>
                   <p className="mt-0.5 flex items-center gap-1 text-xs text-text-muted">
                     {username}
@@ -86,14 +86,9 @@ export default function Contact() {
 
       {/* Footer */}
       <div className="mx-auto mt-20 max-w-6xl border-t border-border pt-8">
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <div className="flex items-center justify-center">
           <p className="text-sm text-text-muted">
             © {new Date().getFullYear()} Bruno Difante. Todos os direitos reservados.
-          </p>
-          <p className="inline-flex items-center gap-1.5 text-sm text-text-muted">
-            Feito com{" "}
-            <Heart className="h-3.5 w-3.5 fill-red-400 text-red-400" /> e
-            muito café
           </p>
         </div>
       </div>
