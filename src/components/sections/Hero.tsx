@@ -97,9 +97,9 @@ export default function Hero() {
             className="mt-12 flex items-center justify-center gap-5"
           >
             {[
-              { icon: Github, href: "https://github.com/bruni", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/in/bruni", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:contato@bruni.dev", label: "E-mail" },
+              { icon: Github, href: "https://github.com/bruno-difante", label: "GitHub" },
+              { icon: Linkedin, href: "https://linkedin.com/in/bruno-difante", label: "LinkedIn" },
+              { icon: Mail, href: "mailto:difantemoraes@gmail.com", label: "E-mail" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
